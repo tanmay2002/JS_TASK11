@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <title>Task11</title>
+    <style>
+        body {
+            height: 100%;
+            background-color: red;
+            background-image: linear-gradient(rgb(255, 255, 176), rgb(176, 117, 127));
+            color: black;
+        }
+
+        .container1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 800px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            border: none;
+            margin-top: 10px;
+            font-family: sans-serif;
+        }
+
+        li {
+            list-style: none;
+        }
+        p{
+            color: violet;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function validate() {
+            var ct=0;
+            var fn = document.getElementById("fn").value;
+            var ln = document.getElementById("ln").value;
+            var age = document.getElementById("age").value;
+            var phone = document.getElementById("phone").value;
+            var mail = document.getElementById("mail").value;
+            var password = document.getElementById("password").value;
+            var repass = document.getElementById("repass").value;
+            var add = document.getElementById("add").value;
+            var state = document.getElementById("state").value;
+
+            if(fn==""){
+                document.getElementById("fne").innerHTML="POOR";
+                ct++;
+            }
+            if(ln==""){
+                document.getElementById("lne").innerHTML="POOR";
+                ct++;
+            }
+            if(age==""){
+                document.getElementById("agee").innerHTML="POOR";
+                ct++;
+            }
+            if(mail==""){
+                document.getElementById("maile").innerHTML="POOR";
+                ct++;
+            }
+            if(password==""){
+                document.getElementById("passworde").innerHTML="POOR";
+                ct++;
+            }
+            if(repass==""){
+                document.getElementById("repasse").innerHTML="POOR OR MISMATCH";
+                ct++;
+            }
+            if(add==""){
+                document.getElementById("adde").innerHTML="POOR";
+                ct++;
+            }
+            if(state==""){
+                document.getElementById("statee").innerHTML="POOR";
+                ct++;
+            }
+            if(phone==""){
+                document.getElementById("phonee").innerHTML="POOR";
+                ct++;
+            }
+            
+            return true;
+        }
+    </script>
+    <h1 class="text-center" style="color:darkblue">Registration form</h1>
+    <div class="container1">
+
+        <div class="container2 container">
+
+            <table class="table table-borderless">
+                <tr>
+                    <td><label for="fn">First Name</label></td>
+                    <td>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="fn">
+                        </div>
+                    </td>
+                    <td>
+                        <p id="fne"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="ln">Last Name</label></td>
+                    <td>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="ln">
+                        </div>
+                    </td>
+                    </td>
+                    <td>
+                        <p id="lne"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="mail">Email</label></td>
+                    <td>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="mail">
+                        </div>
+                    </td>
+                    <td>
+                        <p id="maile"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="password">Password</label></td>
+                    <td>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="password">
+                        </div>
+                    </td>
+                    </td>
+                    <td>
+                        <p id="passworde"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="repass">Re-enter Password</label></td>
+                    <td>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="repass">
+                        </div>
+                    </td>
+                    <td>
+                        <p id="repasse"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="gender">Gender</label></td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" checked="true">
+                            <label class="form-check-label">
+                                Male
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio">
+                            <label class="form-check-label">
+                                Female
+                            </label>
+                        </div>
+                </tr>
+                <tr>
+                    <td><label for="age">Age</label></td>
+                    <td>
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control" id="age">
+                        </div>
+                    </td>
+                    <td>
+                        <p id="agee"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="phone">Phone Number</label></td>
+                    <td>
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control" id="phone">
+                        </div>
+                    </td>
+                    <td>
+                        <p id="phonee"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="add">Address</label></td>
+                    <td>
+                        <div class="form-floating">
+                            <textarea class="form-control" id="add" style="height: 75px"></textarea>
+                        </div>
+                    </td>
+                    <td>
+                        <p id="adde"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="state">State</label></td>
+                    <td>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="state">
+                        </div>
+                    </td>
+                    <td>
+                        <p id="statee"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="country">Country</label></td>
+                    <td>
+                        <div class="input-group input-group-sm mb-3 w-50">
+                            <select class="form-select">
+                                <option selected>Choose your country</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="lang">Language known</label></td>
+                    <td>
+                        <div class="input-group mb-3">
+                            <div>
+                                <input type="checkbox" id="lang">
+                                <label for="lang">English</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="lang">
+                                <label for="lang">Kannada</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="lang">
+                                <label for="lang">Hindi</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="lang">
+                                <label for="lang">Telugu</label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3"><input type="checkbox">
+                
+                        Hereby I declare all the given details are true
+                    </td>
+                </tr>
+                <tr><td></td><td><button class="btn btn-danger" style="border-radius: 15px;" onclick="return validate();">Register</button></td><td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
